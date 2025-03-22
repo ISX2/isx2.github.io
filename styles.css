@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+  }
+  
+  .landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+  .landing h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .landing p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-container {
+    position: sticky;
+    top: 50px;
+    padding: 20px 0;
+    background-color: rgba(245, 245, 245, 0.9);
+    z-index: 10;
+  }
+  
+  .timeline {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 4px;
+    background-color: #b0c4de;
+    margin: 0 auto;
+  }
+  
+  .timeline-point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #6a8caf;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .timeline-point.active {
+    background-color: #3056a0;
+    box-shadow: 0 0 0 4px rgba(106, 140, 175, 0.3);
+  }
+  
+  .skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .skill {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .skill.programming {
+    border: 2px solid #c5e17a;
+    background-color: rgba(197, 225, 122, 0.2);
+  }
+  
+  .skill.sound-design {
+    border: 2px solid #4caf50;
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+  
+  .projects-container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .project {
+    width: 90%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .project.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .carousel {
+    position: relative;
+    border: 2px solid #ff7f50;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    height: 300px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    z-index: 5;
+  }
+  
+  .carousel-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .carousel-progress {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 127, 80, 0.3);
+  }
+  
+  .carousel-progress-bar {
+    height: 100%;
+    background-color: #ff7f50;
+    width: 0;
+  }
+  
+  .project-description {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .project-description h3 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .project-description p {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .description-waves {
+    margin-top: 2rem;
+    border: 1px solid #eee;
+    padding: 1rem;
+  }
+  
+  .wave {
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23333333'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 1200px 100%;
+    margin-bottom: 5px;
+  }
+  
+  .footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #333;
+    color: white;
+  }
+  
+  @media (min-width: 768px) {
+    .project-content {
+      flex-direction: row;
+    }
+    
+    .carousel, .project-description {
+      flex: 1;
+    }
+  }
